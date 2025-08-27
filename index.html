@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Sky City Ltd - Real Estate & Investment</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #87ceeb;
+            --accent-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), #4a90e2);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(44, 90, 160, 0.8), rgba(44, 90, 160, 0.8)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23e8f4f8" width="1200" height="800"/><path fill="%23b8d8e8" d="M0 400l100-50 100 50 100-25 100 25 100-75 100 75 100-50 100 50 100-25 100 25 100-50v400H0z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 80px;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), #4a90e2);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 90, 160, 0.4);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #f0f0f0;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card-body {
+            padding: 2rem;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color), #4a90e2);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .about-section {
+            background: var(--accent-color);
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer h5 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(45deg, #4a90e2, #87ceeb);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 1;
+        }
+
+        .project-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(44, 90, 160, 0.9), rgba(74, 144, 226, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-details {
+            text-align: center;
+            color: white;
+        }
+
+        .project-details h5 {
+            margin-bottom: 10px;
+        }
+
+        .project-card-body {
+            padding: 1.5rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-ongoing {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-image {
+            height: 250px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .team-card-body {
+            padding: 2rem 1.5rem;
+        }
+
+        .team-name {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-position {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .team-social a:hover {
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-city"></i> Blue Sky City Ltd
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">Premium Real Estate Solutions</h1>
+                    <p class="hero-subtitle">
+                        We offer a range of real estate and business services tailored to help you grow, invest, and
+                        build smarter.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary btn-lg me-3">Our Services</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Features Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Blue Sky City</h2>
+                <p class="text-muted">Our commitment to excellence sets us apart in the real estate industry</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Legal Integrity</h4>
+                        <p>We provide fully legal and verified land documents, with open communication throughout the
+                            process.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h4>Quality Construction</h4>
+                        <p>We never compromise on construction, infrastructure, or legal integrity—every plot and
+                            project meets high standards.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Environmental Balance</h4>
+                        <p>We plan communities with long-term environmental balance—green spaces, water bodies, and
+                            proper zoning.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community Building</h4>
+                        <p>Our goal is to build societies, not just structures. Every development encourages social
+                            interaction, harmony, and security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <div class="stat-label">Properties Sold</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p class="text-muted">Comprehensive real estate and investment solutions</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h4>Premium Plots</h4>
+                            <p>Discover premium plots located in prime areas, perfect for both residential and
+                                commercial development.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Luxury Apartments</h4>
+                            <p>Experience luxurious living with modern apartments featuring top-tier amenities and prime
+                                locations.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Investment Advisory</h4>
+                            <p>Maximize returns with expert insights on real estate trends, risks, and capital
+                                allocation strategies.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <div
+                            style="background: linear-gradient(45deg, #4a90e2, #87ceeb); height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                            <i class="fas fa-city"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4" style="color: var(--primary-color);">About Blue Sky City Ltd</h2>
+                    <p class="mb-4">
+                        We help clients identify, acquire, and develop properties tailored to their goals. From urban
+                        planning to final delivery, we manage the full lifecycle of real estate development.
+                    </p>
+                    <p class="mb-4">
+                        Our team is dedicated to building communities with long-term environmental balance,
+                        incorporating green spaces, water bodies, and proper zoning to create sustainable living
+                        environments.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Legal Documentation</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Quality Assurance</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Environmental Planning</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Community Development</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Investment Advisory</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Full Lifecycle Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+<!-- Projects Section -->
+    <section id="projects" class="section-padding" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Projects</h2>
+                <p class="text-muted">Showcasing our successful developments and ongoing projects</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h5>Sky Heights Residency</h5>
+                                    <p>Premium residential complex with 200 luxury apartments</p>
+                                    <div class="btn btn-light btn-sm">View Details</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-status status-completed">Completed</span>
+                            <h5>Sky Heights Residency</h5>
+                            <p class="text-muted">A premium residential complex featuring 200 luxury apartments with
+                                modern amenities, located in the heart of the business district.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-map-marker-alt"></i> Downtown Area</small>
+                                <small class="text-muted"><i class="fas fa-calendar"></i> 2022-2023</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h5>Blue Commerce Plaza</h5>
+                                    <p>Modern commercial complex with retail and office spaces</p>
+                                    <div class="btn btn-light btn-sm">View Details</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-status status-completed">Completed</span>
+                            <h5>Blue Commerce Plaza</h5>
+                            <p class="text-muted">A state-of-the-art commercial complex featuring retail outlets, office
+                                spaces, and recreational facilities across 5 floors.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-map-marker-alt"></i> Business Hub</small>
+                                <small class="text-muted"><i class="fas fa-calendar"></i> 2021-2022</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h5>Garden Villas</h5>
+                                    <p>Exclusive residential villas with private gardens</p>
+                                    <div class="btn btn-light btn-sm">View Details</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-status status-ongoing">Ongoing</span>
+                            <h5>Garden Villas</h5>
+                            <p class="text-muted">Luxury residential villas with private gardens, modern architecture,
+                                and eco-friendly features in a gated community.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-map-marker-alt"></i> Green Valley</small>
+                                <small class="text-muted"><i class="fas fa-calendar"></i> 2023-2024</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-icon">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h5>Metro Square</h5>
+                                    <p>Mixed-use development with residential and commercial units</p>
+                                    <div class="btn btn-light btn-sm">View Details</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-status status-completed">Completed</span>
+                            <h5>Metro Square</h5>
+                            <p class="text-muted">A comprehensive mixed-use development featuring residential towers,
+                                shopping centers, and office complexes.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-map-marker-alt"></i> City Center</small>
+                                <small class="text-muted"><i class="fas fa-calendar"></i> 2020-2021</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-icon">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h5>Sunrise Plots</h5>
+                                    <p>Premium residential plots in developing areas</p>
+                                    <div class="btn btn-light btn-sm">View Details</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-status status-ongoing">Ongoing</span>
+                            <h5>Sunrise Plots</h5>
+                            <p class="text-muted">Well-planned residential plots with all modern infrastructure, ideal
+                                for building custom homes in a peaceful environment.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-map-marker-alt"></i> Suburban Area</small>
+                                <small class="text-muted"><i class="fas fa-calendar"></i> 2023-2025</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h5>Eco Park Community</h5>
+                                    <p>Sustainable community development with green spaces</p>
+                                    <div class="btn btn-light btn-sm">View Details</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-status status-ongoing">Ongoing</span>
+                            <h5>Eco Park Community</h5>
+                            <p class="text-muted">An environmentally conscious community with extensive green spaces,
+                                renewable energy, and sustainable living features.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-map-marker-alt"></i> Eco District</small>
+                                <small class="text-muted"><i class="fas fa-calendar"></i> 2024-2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Team Section -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expert Team</h2>
+                <p class="text-muted">Meet the professionals behind our success</p>
+            </div>
+            <div class="row g-4">
+                
+                
+               
+               
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="team-card-body">
+                            <h4 class="team-name">David Thompson</h4>
+                            <p class="team-position">Legal Advisor</p>
+                            <p class="text-muted">David handles all legal documentation and ensures complete compliance
+                                with regulations for all our projects and transactions.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="team-card-body">
+                            <h4 class="team-name">Lisa Wang</h4>
+                            <p class="team-position">Marketing Director</p>
+                            <p class="text-muted">Lisa leads our marketing initiatives and client relations, ensuring
+                                excellent customer service throughout the sales process.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <div class="team-card-body">
+                            <h4 class="team-name">Robert Johnson</h4>
+                            <p class="team-position">Project Coordinator</p>
+                            <p class="text-muted">Robert manages project timelines and coordinates between different
+                                teams to ensure smooth execution of all developments.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="team-card-body">
+                            <h4 class="team-name">Amanda Davis</h4>
+                            <p class="team-position">Quality Assurance</p>
+                            <p class="text-muted">Amanda oversees quality control processes and ensures all projects
+                                meet our stringent standards for excellence.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding" style="background: #f8f9fa;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <p class="text-muted">Our Team is ready to guide you to invest— we are just a click away.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="row g-4">
+                            <div class="col-md-4 text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h5>Visit Us</h5>
+                                <p class="text-muted">123 Business District<br>City, State 12345</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h5>Call Us</h5>
+                                <p class="text-muted">+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h5>Email Us</h5>
+                                <p class="text-muted">info@blueskycityltd.com<br>sales@blueskycityltd.com</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-5">
+                            <a href="#" class="btn btn-primary btn-lg">Contact Us Today</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h5><i class="fas fa-city"></i> Blue Sky City Ltd</h5>
+                        <p class="text-muted">
+                            Building premium communities with a focus on quality, sustainability, and legal integrity.
+                            Your trusted partner in real estate development and investment.
+                        </p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h5>Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5>Services</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Premium Plots</a></li>
+                            <li><a href="#">Luxury Apartments</a></li>
+                            <li><a href="#">Investment Advisory</a></li>
+                            <li><a href="#">Property Development</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h5>Projects</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Sky Heights</a></li>
+                            <li><a href="#">Blue Commerce</a></li>
+                            <li><a href="#">Garden Villas</a></li>
+                            <li><a href="#">Metro Square</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h5>Contact Info</h5>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-map-marker-alt me-2"></i>123 Business District</li>
+                            <li><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
+                            <li><i class="fas fa-envelope me-2"></i>info@blueskycityltd.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="my-4" style="border-color: #444;">
+                <div class="text-center">
+                    <p class="text-muted">&copy; 2024 Blue Sky City Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Custom JS -->
+        <script>
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Navbar background change on scroll
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'linear-gradient(135deg, rgba(44, 90, 160, 0.95), rgba(74, 144, 226, 0.95))';
+                    navbar.style.backdropFilter = 'blur(10px)';
+                } else {
+                    navbar.style.background = 'linear-gradient(135deg, var(--primary-color), #4a90e2)';
+                    navbar.style.backdropFilter = 'none';
+                }
+            });
+
+            // Animate stats on scroll
+            const animateStats = () => {
+                const stats = document.querySelectorAll('.stat-number');
+                stats.forEach(stat => {
+                    const target = parseInt(stat.textContent);
+                    const increment = target / 100;
+                    let current = 0;
+
+                    const updateStat = () => {
+                        if (current < target) {
+                            current += increment;
+                            stat.textContent = Math.ceil(current) + '+';
+                            requestAnimationFrame(updateStat);
+                        } else {
+                            stat.textContent = target + '+';
+                        }
+                    };
+
+                    updateStat();
+                });
+            };
+
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.classList.contains('stats-section')) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const statsSection = document.querySelector('.stats-section');
+                if (statsSection) {
+                    observer.observe(statsSection);
+                }
+            });
+        </script>
+</body>
+
+</html>
