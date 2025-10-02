@@ -224,8 +224,22 @@
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--secondary-color);
+        .footer-links a:hover,
+        .text-muted a:hover {
+            background: linear-gradient(135deg, var(--primary-color), #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        /* Update hover effect for phone numbers */
+        a[href^="https://wa.me/"]:hover {
+            background: linear-gradient(135deg, var(--primary-color), #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(1.05);
+            display: inline-block;
+            transition: all 0.3s ease;
         }
 
         .social-icons a {
