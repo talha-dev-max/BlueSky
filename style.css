@@ -419,6 +419,65 @@
             background: var(--secondary-color);
         }
 
+        .video-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card h5 {
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        .video-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Add these styles for video play icon */
+        .video-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .video-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-icon i {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-left: 4px; /* Offset slightly to center the triangle icon */
+        }
+
+        .video-wrapper:hover .video-play-icon {
+            background: var(--primary-color);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-wrapper:hover .video-play-icon i {
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
